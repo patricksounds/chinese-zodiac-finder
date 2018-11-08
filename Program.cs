@@ -1,6 +1,10 @@
 ﻿using System;
 
+using System.Globalization;
+
 namespace ChineseZodiac
+
+
 {
     class Program
     {
@@ -18,7 +22,21 @@ namespace ChineseZodiac
 
                 Console.WriteLine("Which year were you born in?");
                 string input = Console.ReadLine();
-                int yearBorn = 0;
+
+                string yearFormat = "yyyy";
+                    DateTime date;
+                    if (!DateTime.TryParseExact(input, yearFormat, CultureInfo.InvariantCulture, DateTimeStyles.None, out date))
+                    {
+                    Console.WriteLine("Invalid format. Year must be yyyy (e.g. 2000).");
+                    return;
+                    }
+                    int yearBorn = date.Year;
+                    if (yearBorn < 1960 || yearBorn > 2019)
+                    {
+                        Console.WriteLine("Year must be between 1960-2019.");
+                        return;
+                    } 
+
                 int Rat = 1996;
                 int Rat1 = 2008;
                 int Rat2 = 1984;
