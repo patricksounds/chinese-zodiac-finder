@@ -1,41 +1,53 @@
-﻿using System;
+using System;
 
 using System.Globalization;
 
 namespace ChineseZodiac
-
-
 {
     class Program
     {
         static void Main(string[] args)
         {
+            string appName = "Chinese Zodiac";
+            string appVersion = "1.0.0";
+            string appAuthor = "Patrick Towey";
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("{0}: Version {1} by {2}", appName, appVersion, appAuthor);
+            Console.ResetColor();
+
+            bool requireInput = true;
+            string input = string.Empty;
+            int yearBorn = -1;
+
             do
             {
-                string appName = "Chinese Zodiac";
-                string appVersion = "1.0.0";
-                string appAuthor = "Patrick Towey";
+                do
+                {
+                    bool validInput = true; 
+                    Console.WriteLine("Which year were you born in?");
+                    input = Console.ReadLine();
 
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("{0}: Version {1} by {2}", appName, appVersion, appAuthor);
-                Console.ResetColor();
-
-                Console.WriteLine("Which year were you born in?");
-                string input = Console.ReadLine();
-
-                string yearFormat = "yyyy";
+                    string yearFormat = "yyyy";
                     DateTime date;
                     if (!DateTime.TryParseExact(input, yearFormat, CultureInfo.InvariantCulture, DateTimeStyles.None, out date))
                     {
-                    Console.WriteLine("Invalid format. Year must be yyyy (e.g. 2000).");
-                    return;
+                        Console.WriteLine("Invalid format. Year must be yyyy (e.g. 2000).");
+                        validInput = false; 
                     }
-                    int yearBorn = date.Year;
-                    if (yearBorn < 1960 || yearBorn > 2019)
+
+                    if (validInput)
                     {
-                        Console.WriteLine("Year must be between 1960-2019.");
-                        return;
-                    } 
+                        yearBorn = date.Year;
+                        if (yearBorn < 1960 || yearBorn > 2019)
+                        {
+                            Console.WriteLine("Year must be between 1960-2019.");
+                            validInput = false; 
+                        }
+                    }
+
+                    requireInput = !validInput; 
+
+                } while (requireInput); 
 
                 int Rat = 1996;
                 int Rat1 = 2008;
@@ -103,247 +115,308 @@ namespace ChineseZodiac
                 {
                     Console.WriteLine("You are a rat!");
                 }
+
                 if (yearBorn == Rat1)
                 {
                     Console.WriteLine("You are a rat!");
                 }
+
                 if (yearBorn == Rat2)
                 {
                     Console.WriteLine("You are a rat!");
                 }
+
                 if (yearBorn == Rat3)
                 {
                     Console.WriteLine("You are a rat!");
                 }
+
                 if (yearBorn == Rat4)
                 {
                     Console.WriteLine("You are a rat!");
                 }
+
                 if (yearBorn == Ox)
                 {
                     Console.WriteLine("You are an Ox!");
                 }
+
                 if (yearBorn == Ox1)
                 {
                     Console.WriteLine("You are an Ox!");
                 }
+
                 if (yearBorn == Ox2)
                 {
                     Console.WriteLine("You are an Ox!");
                 }
+
                 if (yearBorn == Ox3)
                 {
                     Console.WriteLine("You are an Ox!");
                 }
+
                 if (yearBorn == Ox4)
                 {
                     Console.WriteLine("You are an Ox!");
                 }
+
                 if (yearBorn == Tiger)
                 {
                     Console.WriteLine("You are a Tiger!");
                 }
+
                 if (yearBorn == Tiger1)
                 {
                     Console.WriteLine("You are a Tiger!");
                 }
+
                 if (yearBorn == Tiger2)
                 {
                     Console.WriteLine("You are a Tiger!");
                 }
+
                 if (yearBorn == Tiger3)
                 {
                     Console.WriteLine("You are a Tiger!");
                 }
+
                 if (yearBorn == Tiger4)
                 {
                     Console.WriteLine("You are a Tiger!");
                 }
+
                 if (yearBorn == Rabbit)
                 {
                     Console.WriteLine("You are a Rabbit!");
                 }
+
                 if (yearBorn == Rabbit1)
                 {
                     Console.WriteLine("You are a Rabbit!");
                 }
+
                 if (yearBorn == Rabbit2)
                 {
                     Console.WriteLine("You are a Rabbit!");
                 }
+
                 if (yearBorn == Rabbit3)
                 {
                     Console.WriteLine("You are a Rabbit!");
                 }
+
                 if (yearBorn == Rabbit4)
                 {
                     Console.WriteLine("You are a Rabbit!");
                 }
+
                 if (yearBorn == Dragon)
                 {
                     Console.WriteLine("You are a Dragon!");
                 }
+
                 if (yearBorn == Dragon1)
                 {
                     Console.WriteLine("You are a Dragon!");
                 }
+
                 if (yearBorn == Dragon2)
                 {
                     Console.WriteLine("You are a Dragon!");
                 }
+
                 if (yearBorn == Dragon3)
                 {
                     Console.WriteLine("You are a Dragon!");
                 }
+
                 if (yearBorn == Dragon4)
                 {
                     Console.WriteLine("You are a Dragon!");
                 }
+
                 if (yearBorn == Snake)
                 {
                     Console.WriteLine("You are a Snake!");
                 }
+
                 if (yearBorn == Snake1)
                 {
                     Console.WriteLine("You are a Snake!");
                 }
+
                 if (yearBorn == Snake2)
                 {
                     Console.WriteLine("You are a Snake!");
                 }
+
                 if (yearBorn == Snake3)
                 {
                     Console.WriteLine("You are a Snake!");
                 }
+
                 if (yearBorn == Snake4)
                 {
                     Console.WriteLine("You are a Snake!");
                 }
+
                 if (yearBorn == Horse)
                 {
                     Console.WriteLine("You are a Horse!");
                 }
+
                 if (yearBorn == Horse1)
                 {
                     Console.WriteLine("You are a Horse!");
                 }
+
                 if (yearBorn == Horse2)
                 {
                     Console.WriteLine("You are a Horse!");
                 }
+
                 if (yearBorn == Horse3)
                 {
                     Console.WriteLine("You are a Horse!");
                 }
+
                 if (yearBorn == Horse4)
                 {
                     Console.WriteLine("You are a Horse!");
                 }
+
                 if (yearBorn == Goat)
                 {
                     Console.WriteLine("You are a Goat!");
                 }
+
                 if (yearBorn == Goat1)
                 {
                     Console.WriteLine("You are a Goat!");
                 }
+
                 if (yearBorn == Goat2)
                 {
                     Console.WriteLine("You are a Goat!");
                 }
+
                 if (yearBorn == Goat3)
                 {
                     Console.WriteLine("You are a Goat!");
                 }
+
                 if (yearBorn == Goat4)
                 {
                     Console.WriteLine("You are a Goat!");
                 }
+
                 if (yearBorn == Monkey)
                 {
                     Console.WriteLine("You are a Monkey!");
                 }
+
                 if (yearBorn == Monkey1)
                 {
                     Console.WriteLine("You are a Monkey!");
                 }
+
                 if (yearBorn == Monkey2)
                 {
                     Console.WriteLine("You are a Monkey!");
                 }
+
                 if (yearBorn == Monkey3)
                 {
                     Console.WriteLine("You are a Monkey!");
                 }
+
                 if (yearBorn == Monkey4)
                 {
                     Console.WriteLine("You are a Monkey!");
                 }
+
                 if (yearBorn == Rooster)
                 {
                     Console.WriteLine("You are a Rooster!");
                 }
+
                 if (yearBorn == Rooster1)
                 {
                     Console.WriteLine("You are a Rooster!");
                 }
+
                 if (yearBorn == Rooster2)
                 {
                     Console.WriteLine("You are a Rooster!");
                 }
+
                 if (yearBorn == Rooster3)
                 {
                     Console.WriteLine("You are a Rooster!");
                 }
+
                 if (yearBorn == Rooster4)
                 {
                     Console.WriteLine("You are a Rooster!");
                 }
+
                 if (yearBorn == Dog)
                 {
                     Console.WriteLine("You are a Dog!");
                 }
+
                 if (yearBorn == Dog1)
                 {
                     Console.WriteLine("You are a Dog!");
                 }
+
                 if (yearBorn == Dog2)
                 {
                     Console.WriteLine("You are a Dog!");
                 }
+
                 if (yearBorn == Dog3)
                 {
                     Console.WriteLine("You are a Dog!");
                 }
+
                 if (yearBorn == Dog4)
                 {
                     Console.WriteLine("You are a Dog!");
                 }
+
                 if (yearBorn == Pig)
                 {
                     Console.WriteLine("You are a Pig!");
                 }
+
                 if (yearBorn == Pig1)
                 {
                     Console.WriteLine("You are a Pig!");
                 }
+
                 if (yearBorn == Pig2)
                 {
                     Console.WriteLine("You are a Pig!");
                 }
+
                 if (yearBorn == Pig3)
                 {
                     Console.WriteLine("You are a Pig!");
                 }
+
                 if (yearBorn == Pig4)
                 {
                     Console.WriteLine("You are a Pig!");
                 }
 
                 Console.WriteLine("Find another year? Yes | No");
+
             } while (Console.ReadLine() != "No");
+
             Console.WriteLine("Thank you for taking the time to learn your Chinese Zodiac Animal");
             Environment.Exit(0);
-        } 
-    } 
+        }
+    }
 }
